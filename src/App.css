@@ -25,6 +25,7 @@ ul {
   display: flex;
   background-color: var(--bg-color);
   width: 92%;
+  min-height: calc(100vh-30px);
   margin: auto;
   justify-content: flex-start;
   gap: 25px;
@@ -63,7 +64,7 @@ ul {
 /* custom scroll bar  */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
