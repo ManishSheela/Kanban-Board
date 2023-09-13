@@ -71,19 +71,10 @@ const BoardCard = () => {
     0: "No priority",
   };
 
-  // Create a mapping of userId to user names
-  // const userMapping = new Map();
-  // users.forEach((user) => {
-  //   userMapping.set(user.id, user);
-  // });
-  // setUserMap(userMapping);
-
- let userMapping = new Map([
- ]);
+  let userMapping = new Map([]);
   for (let user of users) {
     userMapping.set(user.id, user.name);
   }
-  
 
   return (
     <>
@@ -98,8 +89,8 @@ const BoardCard = () => {
                 {grouping === "priority"
                   ? priorityOrder[ticketArray[0].priority]
                   : grouping === "status"
-                    ? ticketArray[0].status
-                    : userMapping.get(`${ticketArray[0].userId}`)}
+                  ? ticketArray[0].status
+                  : userMapping.get(`${ticketArray[0].userId}`)}
               </span>
 
               <span className="sec_txt">{ticketArray.length}</span>
