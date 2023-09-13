@@ -50,12 +50,7 @@ const Navigation = () => {
           <div className={styles.grouping}>
             <span className="sec_txt">Grouping</span>
             <div className="status">
-              <select
-                name="group"
-                id="group"
-                value={grouping}
-                onChange={handleGroup}
-              >
+              <select name="group" value={grouping} onChange={handleGroup}>
                 <option value="status">Status</option>
                 <option value="userId">User</option>
                 <option value="priority">Priority</option>
@@ -66,12 +61,7 @@ const Navigation = () => {
           <div className={styles.ordering}>
             <span className="sec_txt">Ordering</span>
             <div className={styles.priority}>
-              <select
-                name="priority"
-                id="priority"
-                value={ordering}
-                onChange={handleOrder}
-              >
+              <select name="priority" value={ordering} onChange={handleOrder}>
                 <option value="priority">Priority</option>
                 <option value="title">Title</option>
               </select>

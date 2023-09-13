@@ -3,12 +3,13 @@ import BoardCard from "../components/BoardCard/BoardCard";
 import { useGroupOrder } from "../GroupOrderContext";
 const Board = () => {
   const { grouping, ordering } = useGroupOrder();
-
   const [data, setData] = useState({ tickets: [], users: [] });
   const { tickets, users } = data;
 
+  //API
   const apiUrl = "https://api.quicksell.co/v1/internal/frontend-assignment";
 
+  //fetching data from API
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,15 +27,15 @@ const Board = () => {
   }, [grouping, ordering]);
 
   // filter card on the bases of status
-  let sortedTickets = [];
-  let groupKey = grouping;
-  const uniqueKeys = [];
+  let sortedTickets = []; //stores the array of tickets of same group for each group.
+  const uniqueKeys = []; //stores the unique or distinct values of the groups
 
+  //populating the uniqueKeys array based on grouping value
   for (const ticket of tickets) {
     const ticketSort =
-      groupKey === "status"
+      grouping === "status"
         ? ticket.status
-        : groupKey === "userId"
+        : grouping === "userId"
         ? ticket.userId
         : ticket.priority;
     if (!uniqueKeys.includes(ticketSort)) {
@@ -42,26 +43,30 @@ const Board = () => {
     }
   }
 
+  //populating sortedTickets for every distinct key in uniqueKeys
   for (const key of uniqueKeys) {
     let tempTickets = getTicketsByKey(tickets, key);
+    //sorting each group based on ordering value
     if (ordering === "priority")
       tempTickets.sort((a, b) => b.priority - a.priority);
     else if (ordering === "title")
       tempTickets.sort((a, b) => a.title.localeCompare(b.title));
+
+    //pushing it in the array
     sortedTickets.push(tempTickets);
   }
+
   function getTicketsByKey(tickets, key) {
     // Filter the tickets array based on the provided status
     const filteredTickets = tickets.filter((ticket) => {
-      if (groupKey === "status") return ticket.status === key;
-      else if (groupKey === "userId") return ticket.userId === key;
-      else if (groupKey === "priority") return ticket.priority === key;
+      if (grouping === "status") return ticket.status === key;
+      else if (grouping === "userId") return ticket.userId === key;
+      else if (grouping === "priority") return ticket.priority === key;
     });
     return filteredTickets;
   }
 
-  // console.log(sortedTickets);
-
+  //priority value mapping
   const priorityOrder = {
     4: "Urgent",
     3: "High",
@@ -72,7 +77,7 @@ const Board = () => {
 
   let userMapping = new Map([]);
   for (let user of users) {
-    userMapping.set(user.id, user.name);
+    userMapping.set(user.id, user.name); //mapping each userid to its username
   }
 
   return (

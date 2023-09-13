@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 import { useGroupOrder } from "../../GroupOrderContext";
 const BoardCard = (props) => {
   const { ticketArray, priorityOrder, userMapping } = props;
-  const { grouping, ordering } = useGroupOrder();
+  const { grouping } = useGroupOrder();
   return (
     <>
       <div className={styles.board_wrapper}>

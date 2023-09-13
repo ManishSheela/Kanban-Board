@@ -14,6 +14,7 @@
 .App {
   background-color: var(--bg-color);
   min-height: 100vh;
+  width: 100%;
   font-size: calc(10px + 2vmin);
 }
 
@@ -22,15 +23,17 @@ ul {
 }
 
 .board {
+  /* height: calc(100vh - 10px); */
+    width: 92%;
+    height: auto;
   display: flex;
-  background-color: var(--bg-color);
-  width: 92%;
-  min-height: calc(100vh-30px);
   margin: auto;
   justify-content: flex-start;
   gap: 25px;
+  background-color: var(--bg-color);
   padding: 20px 0px;
   overflow-x: scroll;
+  /* border: 1px solid red; */
 }
 
 /* primary text   */
@@ -51,6 +54,7 @@ ul {
 .icons {
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .circle_box {
@@ -61,10 +65,12 @@ ul {
   background-color: #BEC2C8;
   margin-right: 5px;
 }
+
 /* custom scroll bar  */
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
