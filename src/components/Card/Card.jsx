@@ -2,13 +2,15 @@ import React from "react";
 import styles from "./card.module.css";
 import { BsFillExclamationSquareFill } from "react-icons/bs";
 const Card = (props) => {
-  const { id, title, tag, priority } = props.ticket;
-  // console.log(props);
+  const { id, title } = props.ticket;
   return (
     <div className={styles.card_wrapper}>
       <div className={styles.card_header}>
         <h3 className="sec_txt">{id}</h3>
-        <img src="./user.png" alt="user" />
+        <img
+          src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+          alt="user"
+        />
       </div>
 
       <p className="txt">{title}</p>
