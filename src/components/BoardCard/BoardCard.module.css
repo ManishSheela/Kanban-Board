@@ -1,0 +1,27 @@
+.board_wrapper {
+    width: auto;
+}
+
+.board_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left_header,
+.right_header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.left_header img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+
+}
+
+.cardBody {
+    padding: 20px 0;
+}

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Roboto', sans-serif;
+   */
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --bg-color: #F4F5F8;
+  --sec-text-color: #BEC2C8;
+}
+
+.App {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  /* position: relative; */
+  /* border: 2px solid red; */
+}
+
+ul {
+  list-style: none;
+}
+
+.board {
+  /* border: 2px solid blue; */
+  display: flex;
+  background-color: var(--bg-color);
+  width: 92%;
+  margin: auto;
+  justify-content: flex-start;
+  gap: 25px;
+  padding: 20px 0px;
+  overflow-x: scroll;
+}
+
+.txt {
+  color: #3A3B41;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.sec_txt {
+  font-size: 14px;
+  color: var(--sec-text-color);
+  font-weight: 600;
+}
+
+.icons {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.circle_box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #BEC2C8;
+  margin-right: 5px;
+}
